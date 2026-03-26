@@ -89,28 +89,16 @@ Analyze the diff to determine:
 
 - **Type**: What kind of change is this?
 - **Scope**: What area/module is affected?
-- **Description**: One-line summary (present tense, imperative mood, <72 chars)
-
-**Example:**
-
-- ✅ `docs(git-commit): add conventional commits skill documentation`
-- ✅ `feat(auth): add user login functionality`
-- ✅ `fix(api): fix timeout issue in api endpoint`
-- ❌ `docs(git-commit): add conventional commits skill documentation.` (no period at end)
+- **Description**: One-line summary (present tense, imperative mood, <72 chars). Description should accurately reflect the **specific semantic content** of the change, not just describe the operation in vague terms.
 
 ### 4. Confirm with User (REQUIRED)
 
-Before executing the commit, **MUST** confirm with the user:
+Before executing the commit, you **MUST** confirm with the user:
 
 1. Summarize the staged changes in natural language
 2. Display the recommended commit message
-3. Ask: **A Confirm / B Edit / C Cancel**
-
-Wait for user response:
-
-- **A** → Execute the commit
-- **B** → Adjust commit message based on user feedback, then confirm again
-- **C** → Cancel the commit
+3. Pause and wait for the user's confirmation (e.g., "yes", "ok", or any affirmative input). Do not force a specific key.
+   _(Note: If the user wishes to cancel, they will simply close/interrupt the terminal, or they can provide feedback to modify the message)._
 
 ### 5. Execute Commit
 
@@ -137,6 +125,7 @@ EOF
 - Reference issues: `Closes #123`, `Refs #456`
 - Keep description under 72 characters
 - No period at the end of description
+- **DO NOT add co-authorship footers** unless the user explicitly requests it
 
 ## Git Safety Protocol
 
@@ -164,8 +153,6 @@ EOF
 ```
 feat(scope): description here
 ```
-
-**A Confirm / B Edit / C Cancel**
 
 ## Output Language Requirement
 
