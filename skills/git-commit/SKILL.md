@@ -90,6 +90,22 @@ Analyze the diff to determine:
 - **Type**: What kind of change is this?
 - **Scope**: What area/module is affected?
 - **Description**: One-line summary (present tense, imperative mood, <72 chars). Description should accurately reflect the **specific semantic content** of the change, not just describe the operation in vague terms.
+- **Body** (auto): When changes are substantial (>3 files or >30 lines), add a multi-line body listing key changes. Format as bullet points.
+
+**When to add body:**
+- More than 3 files changed
+- More than 30 lines changed
+- Multiple distinct logical changes in one commit
+- Changes that need context beyond the description
+
+**Body format:**
+```
+<type>[scope]: <description>
+
+- Component A: refactored responsive rendering logic
+- Add B component: for display functionality
+- Component C: add props support
+```
 
 ### 4. Confirm with User (REQUIRED)
 
@@ -141,17 +157,20 @@ EOF
 
 **output.** Use **bold text**.
 
-**Example output format:**
-
-**Staged Changes Summary**
-
-- file1.ts: modified xxx
-- file2.ts: added xxx
-
-**Recommended Commit Message**
+**Small change:**
 
 ```
 feat(scope): description here
+```
+
+**Substantial change (>3 files or >30 lines):**
+
+```
+feat(scope): description here
+
+- Component A: refactor responsive rendering logic
+- Add B component: for display feature
+- Component C: add props support
 ```
 
 ## Output Language Requirement
